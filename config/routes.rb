@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :purchases
+  resources :groups
   devise_for :users
 
   authenticated :user do
