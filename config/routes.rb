@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticated :user do
-    root to: "home#index", as: :authenticated_root
+    root to: "groups#index", as: :authenticated_root
   end
 
   root to: "devise/sessions#new"
