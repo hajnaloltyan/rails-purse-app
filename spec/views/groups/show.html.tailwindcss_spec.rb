@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "groups/show", type: :view do
+RSpec.describe 'groups/show', type: :view do
   before(:each) do
-    assign(:group, Group.create!())
+    assign(:group, Group.create!)
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
   end
 end

@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "purchases/show", type: :view do
+RSpec.describe 'purchases/show', type: :view do
   before(:each) do
-    assign(:purchase, Purchase.create!())
+    assign(:purchase, Purchase.create!)
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
   end
 end
