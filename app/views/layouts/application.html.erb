@@ -12,7 +12,21 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex flex-col">
+    <main class="container mx-auto px-5 flex flex-col">
+      <nav class="bg-green-500">
+        <ul class="flex">
+          <li class="mr-5"><%= link_to "Home", root_path %></li>
+          <% if user_signed_in? %>
+            <li class="mr-5"><%= link_to "Purchases", purchases_path %></li>
+            <li class="mr-5"><%= link_to "New Purchase", new_purchase_path %></li>
+            <li class="mr-5"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="mr-5"><%= link_to "Log in", new_user_session_path %></li>
+            <li class="mr-5"><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
       <% if alert %>
         <p style="color: red"><%= alert %></p>
       <% end %>
@@ -24,3 +38,4 @@
     </main>
   </body>
 </html>
+
