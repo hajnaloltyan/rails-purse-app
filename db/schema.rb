@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_223512) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_212523) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_223512) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_groups_on_user_id"
+  end
+
+  create_table "groups_purchases", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "purchase_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_groups_purchases_on_group_id"
+    t.index ["purchase_id"], name: "index_groups_purchases_on_purchase_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -45,4 +54,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_223512) do
   end
 
   add_foreign_key "groups", "users"
+  add_foreign_key "groups_purchases", "groups"
+  add_foreign_key "groups_purchases", "purchases"
 end
