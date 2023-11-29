@@ -1,6 +1,12 @@
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
-    <%= render @purchase %>
+    <% @group.purchases.order(created_at: :desc).each do |purchase| %>
+      <div>
+        <h3><%= purchase.name %></h3>
+        <p>Amount: <%= purchase.amount %></p>
+        <p>Date: <%= purchase.created_at.to_date %></p>
+      </div>
+    <% end %>
 
     <%= link_to "Edit this Purchase", edit_purchase_path(@purchase), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

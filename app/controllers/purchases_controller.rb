@@ -1,23 +1,22 @@
 class PurchasesController < ApplicationController
   before_action :set_purchase, only: %i[show edit update destroy]
 
-  def index
-    @purchases = Purchase.all
-  end
-
   def show; end
 
   def new
-    @purchase = Purchase.new
+    @group = Group.find(params[:group_id])
+    @purchase = @group.purchases.build
   end
 
   def edit; end
 
   def create
-    @purchase = Purchase.new(purchase_params)
+    @group = Group.find(params[:group_id])
+    @purchase = @group.purchases.build(purchase_params)
+    @purchase.author = current_user
 
     if @purchase.save
-      redirect_to purchase_url(@purchase), notice: 'Purchase was successfully created.'
+      redirect_to group_url(@group), notice: 'Purchase was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -44,6 +43,6 @@ class PurchasesController < ApplicationController
   end
 
   def purchase_params
-    params.fetch(:purchase, {})
+    params.require(:purchase).permit(:name, :amount, :group_id)
   end
 end

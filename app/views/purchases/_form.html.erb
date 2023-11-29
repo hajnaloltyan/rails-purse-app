@@ -1,4 +1,4 @@
-<%= form_with(model: purchase, class: "contents") do |form| %>
+<%= form_with(model: [@group, @purchase], local: true, class: "contents") do |form| %>
   <% if purchase.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
@@ -10,6 +10,16 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="inline">
+    <%= form.label :name, class: "block font-medium" %>
+    <%= form.text_field :name, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+
+  <div class="inline">
+    <%= form.label :amount, class: "block font-medium" %>
+    <%= form.number_field :amount, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
 
   <div class="inline">
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>

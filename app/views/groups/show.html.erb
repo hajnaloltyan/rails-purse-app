@@ -1,6 +1,16 @@
 <div class="mx-auto md:w-2/3 w-full flex">
   <div class="mx-auto">
-    <%= render @group %>
+    <h2>Total Purchases: <%=number_with_precision(@group.purchases.sum(:amount), precision: 2) %> €</h2>
+
+    <% @group.purchases.order(created_at: :desc).each do |purchase| %>
+      <div>
+        <h3><%= purchase.name %></h3>
+        <p>Amount: <%= number_with_precision(purchase.amount, precision: 2) %> €</p>
+        <p>Date: <%= purchase.created_at.to_date %></p>
+      </div>
+    <% end %>
+
+    <%= link_to "New Purchase", new_group_purchase_path(@group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
 
     <%= link_to "Edit this Group", edit_group_path(@group), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">

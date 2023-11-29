@@ -8,10 +8,11 @@
     <% @groups.each do |group| %>
       <%= link_to group_path(group) do %>
         <div class="group">
-          <h2><%= group.name %></h2>
+          <h3><%= group.name %></h3>
           <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
             <path d="<%= group.icon %>"/>
           </svg>
+          <h3>Total Purchases: <%= number_with_precision(group.purchases.sum(:amount), precision: 2) %> €</h3>
         </div>
       <% end %>
     <% end %>
