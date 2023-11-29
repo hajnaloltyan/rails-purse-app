@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_29_212523) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_29_223543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,6 +38,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_212523) do
     t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "group_id", null: false
+    t.index ["group_id"], name: "index_purchases_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,4 +58,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_29_212523) do
   add_foreign_key "groups", "users"
   add_foreign_key "groups_purchases", "groups"
   add_foreign_key "groups_purchases", "purchases"
+  add_foreign_key "purchases", "groups"
 end
