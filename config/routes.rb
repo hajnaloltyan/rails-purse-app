@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :purchases
-  resources :groups
   devise_for :users
 
   authenticated :user do
     root "groups#index", as: :authenticated_root
+    resources :groups do
+      resources :purchases
+    end
   end
 
   devise_scope :user do
