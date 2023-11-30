@@ -1,0 +1,9 @@
+one:
+  name: 'Hammer'
+  amount: 12
+  group: one
+
+two:
+  name: 'Phone Bill'
+  amount: 45
+  group: two
