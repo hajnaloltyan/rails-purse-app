@@ -10,12 +10,12 @@
       </div>
     <% end %>
 
-    <%= link_to "New Purchase", new_group_purchase_path(@group), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "New Purchase", new_group_purchase_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 ml-6" %>
 
-    <%= link_to "Edit this Group", edit_group_path(@group), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "Edit this Group", edit_group_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 ml-6" %>
     <div class="inline-block ml-2">
-      <%= button_to "Delete this Group", group_path(@group), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+      <%= button_to "Delete this Group", group_path(@group), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 ml-6" %>
     </div>
-    <%= link_to "Back to Groups", groups_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to "<", groups_path, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 ml-6" %>
   </div>
 </div>

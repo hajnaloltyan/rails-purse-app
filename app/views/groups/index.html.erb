@@ -1,20 +1,19 @@
-<div class="w-full">
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Groups</h1>
-    <%= link_to "New group", new_group_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
-  </div>
+<div class="w-full mx-auto">
+  <h2 class="text-2xl py-5 bg-[#3778c2] text-white text-center">Groups</h2>
+</div>
 
-  <div id="groups" class="min-w-full">
-    <% @groups.each do |group| %>
-      <%= link_to group_path(group) do %>
-        <div class="group">
-          <h3><%= group.name %></h3>
-          <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-            <path d="<%= group.icon %>"/>
-          </svg>
-          <h3>Total Purchases: <%= number_with_precision(group.purchases.sum(:amount), precision: 2) %> €</h3>
-        </div>
-      <% end %>
+<div class="flex flex-col justify-between">
+  <% @groups.each do |group| %>
+    <%= link_to group_path(group) do %>
+      <div class="flex p-8 justify-between m-3 bg-white">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+          <path d="<%= group.icon %>"/>
+        </svg>
+        <h3 class="text-2xl font-bold"><%= group.name %></h3>
+        <h3 class="text-xl font-bold"><%= number_with_precision(group.purchases.sum(:amount), precision: 2) %> €</h3>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+
+  <%= link_to "New group", new_group_path, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xl w-full py-10 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 fixed bottom-0 left-0" %>
 </div>
