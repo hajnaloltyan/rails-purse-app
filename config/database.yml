@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: rails_purse_production
-  username: rails_purse
-  password: <%= ENV["RAILS_PURSE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
