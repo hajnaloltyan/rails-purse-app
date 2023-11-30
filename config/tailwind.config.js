@@ -14,6 +14,7 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
+    defaultTheme: 'default',
   },
   plugins: [
     require('flowbite/plugin'),
