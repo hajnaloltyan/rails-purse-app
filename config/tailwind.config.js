@@ -1,4 +1,4 @@
-const defaultTheme = require('@tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -9,12 +9,7 @@ module.exports = {
     './app/views/**/*.{erb,haml,html,slim}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
-    },
-    defaultTheme: 'default',
+    extend: {},
   },
   plugins: [
     require('flowbite/plugin'),
