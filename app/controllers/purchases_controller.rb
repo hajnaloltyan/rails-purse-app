@@ -1,7 +1,10 @@
 class PurchasesController < ApplicationController
   before_action :set_purchase, only: %i[show edit update destroy]
 
-  def show; end
+  def show
+    @group = Group.find(params[:group_id])
+    @purchase = @group.purchases.find(params[:id])
+  end
 
   def new
     @group = Group.find(params[:group_id])
@@ -39,7 +42,7 @@ class PurchasesController < ApplicationController
   private
 
   def set_purchase
-    @purchase = Purchase.include(:users).find(params[:id])
+    @purchase = Purchase.find(params[:id])
   end
 
   def purchase_params

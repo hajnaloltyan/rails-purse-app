@@ -13,11 +13,23 @@
 
   <body class="bg-[#F1F1F1]">
     <main class="container mx-auto flex flex-col">
+      <nav class="bg-[#3778c2] text-white">
+        <ul class="flex justify-between px-10 py-3">
+          <li class="mr-5"><%= link_to "Home", root_path%></li>
+          <% if user_signed_in? %>
+            <li class="mr-5"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="mr-5"><%= link_to "Log in", new_user_session_path %></li>
+            <li class="mr-5"><%= link_to "Sign up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
       <% if alert %>
-        <p style="color: red"><%= alert %></p>
+        <p class="text-red-400 text-center font-bold"><%= alert %></p>
       <% end %>
       <% if notice %>
-        <p style="color: green"><%= notice %></p>
+        <p class="text-green-400 text-center font-bold"><%= notice %></p>
       <% end %>
 
       <%= yield %>
