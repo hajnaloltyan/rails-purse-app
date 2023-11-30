@@ -6,14 +6,12 @@
   <% @groups.each do |group| %>
     <%= link_to group_path(group) do %>
       <div class="flex p-8 justify-between m-3 bg-white">
-        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
-          <path d="<%= group.icon %>"/>
-        </svg>
+        <svg class="h-8 w-8 text-blue-500"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="<%= group.icon %>"/></svg>
         <h3 class="text-2xl font-bold"><%= group.name %></h3>
         <h3 class="text-xl font-bold"><%= number_with_precision(group.purchases.sum(:amount), precision: 2) %> €</h3>
       </div>
     <% end %>
   <% end %>
 
-  <%= link_to "New group", new_group_path, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xl w-full py-10 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 fixed bottom-0 left-0" %>
+  <%= link_to "New group", new_group_path, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xl w-full py-10 text-center fixed bottom-0 left-0" %>
 </div>

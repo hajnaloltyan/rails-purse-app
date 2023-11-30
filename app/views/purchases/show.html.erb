@@ -5,8 +5,8 @@
 
 <div>
   <div class="flex bg-[#5fb523] justify-between px-10">
-    <%= link_to "Edit this Purchase", edit_group_purchase_path(@group, @purchase), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 " %>
-    <%= button_to "Delete this Purchase", group_purchase_path(@group, @purchase), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800" %>
+    <%= link_to "Edit this Purchase", edit_group_purchase_path(@group, @purchase), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2 text-center" %>
+    <%= button_to "Delete this Purchase", group_purchase_path(@group, @purchase), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2 text-center" %>
   </div>
 
   <div class="mx-auto">

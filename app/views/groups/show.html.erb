@@ -8,8 +8,8 @@
     <h2 class="text-2xl bg-[#3778c2] text-white text-center py-3">Total Purchases: <%=number_with_precision(@group.purchases.sum(:amount), precision: 2) %> €</h2>
 
     <div class="flex bg-[#5fb523] justify-between px-10">
-      <%= link_to "Edit this Group", edit_group_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800" %>
-      <%= button_to "Delete this Group", group_path(@group), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800" %>
+      <%= link_to "Edit this Group", edit_group_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center" %>
+      <%= button_to "Delete this Group", group_path(@group), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center" %>
     </div>
 
     <% @group.purchases.order(created_at: :desc).each do |purchase| %>
@@ -23,5 +23,5 @@
     <% end %>
   </div>
 
-  <%= link_to "New Purchase", new_group_purchase_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xl w-full py-10 text-center dark:bg-blue-600 dark:hover:bg-[#5fb523] dark:focus:ring-blue-800 fixed bottom-0 left-0" %>
+  <%= link_to "New Purchase", new_group_purchase_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-xl w-full py-10 text-center fixed bottom-0 left-0" %>
 </div>
