@@ -7,19 +7,12 @@
   <div>
     <h2 class="text-2xl bg-[#3778c2] text-white text-center py-3">Total Purchases: <%=number_with_precision(@group.purchases.sum(:amount), precision: 2) %> €</h2>
 
-    <div class="flex bg-[#5fb523] justify-between px-10">
-      <%= link_to "Edit this Group", edit_group_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center" %>
-      <%= button_to "Delete this Group", group_path(@group), method: :delete, class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-4 text-center" %>
-    </div>
-
     <% @group.purchases.order(created_at: :desc).each do |purchase| %>
-      <%= link_to group_purchase_path(@group), class: "block" do %>
-        <div class="flex flex-col gap-2 text-xl p-8 justify-between bg-white m-3">
-          <h3 class="font-bold"><%= purchase.name %></h3>
-          <p>Amount: <%= number_with_precision(purchase.amount, precision: 2) %> €</p>
-          <p>Date: <%= purchase.created_at.to_date %></p>
-        </div>
-      <% end %>
+      <div class="flex flex-col gap-2 text-xl p-8 justify-between bg-white m-3">
+        <h3 class="font-bold"><%= purchase.name %></h3>
+        <p>Amount: <%= number_with_precision(purchase.amount, precision: 2) %> €</p>
+        <p>Date: <%= purchase.created_at.to_date %></p>
+      </div>
     <% end %>
   </div>
 

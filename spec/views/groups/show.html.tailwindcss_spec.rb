@@ -40,9 +40,4 @@ RSpec.describe 'Groups Show Page', type: :system do
     click_on 'Hammer'
     expect(page).to have_content('Hammer')
   end
-
-  it 'displays the delete button' do
-    visit group_path(@group)
-    expect(page).to have_content('Delete this Group')
-  end
 end

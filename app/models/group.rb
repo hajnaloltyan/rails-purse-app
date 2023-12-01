@@ -1,6 +1,6 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_many :purchases
+  has_many :purchases, dependent: :destroy
 
   validates :name, presence: true
   validates :icon, presence: true
