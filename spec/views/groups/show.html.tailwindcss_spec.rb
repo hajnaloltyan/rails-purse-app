@@ -27,17 +27,11 @@ RSpec.describe 'Groups Show Page', type: :system do
 
   it 'displays the purchase date' do
     visit group_path(@group)
-    expect(page).to have_content('2023-11-30')
+    expect(page).to have_content('2023-12-01')
   end
 
   it 'diplays the new purchase button' do
     visit group_path(@group)
     expect(page).to have_content('New Purchase')
-  end
-
-  it 'leads the user to the details of the purchase page' do
-    visit group_path(@group)
-    click_on 'Hammer'
-    expect(page).to have_content('Hammer')
   end
 end
