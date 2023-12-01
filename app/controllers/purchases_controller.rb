@@ -19,7 +19,7 @@ class PurchasesController < ApplicationController
     @purchase.author = current_user
 
     if @purchase.save
-      redirect_to [@group, @purchase], notice: 'Purchase was successfully created.'
+      redirect_to group_path(@group), notice: 'Purchase was successfully created.'
     else
       render :new
     end
