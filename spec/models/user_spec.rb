@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   fixtures :users
 
-  it 'has a valid factory' do
+  it 'has a valid user' do
     expect(users(:one)).to be_valid
   end
 
