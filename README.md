@@ -32,6 +32,10 @@ This is a transaction app, where users can sign up to organize expenses into dif
 
 Without logging in or signing up no pages are publicly available. 
 
+[Demo](https://rails-purse.onrender.com)
+
+[Video](https://www.loom.com/share/01651a1c5aed4efe98acc22c4670abd4?sid=6a9d231f-d403-4866-8159-9618f0c38847)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
