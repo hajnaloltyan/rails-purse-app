@@ -1,0 +1,29 @@
+<%= form_with(model: [@group, @purchase], local: true, class: "max-w-sm mx-auto") do |form| %>
+  <% if purchase.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+      <ul>
+        <% purchase.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-5">
+    <%= form.label :name, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.text_field :name, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :amount, class: "block mb-2 text-sm font-medium text-gray-900" %>
+    <%= form.number_field :amount, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" %>
+  </div>
+
+  <div class="flex items-start mb-5 gap-20">
+    <%= form.submit class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" %>
+
+    <%= link_to "Back to Purchases", group_path(@group), class: "text-white bg-[#5fb523] hover:bg-[#3778c2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ml-10" %>
+  </div>
+<% end %>
