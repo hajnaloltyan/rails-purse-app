@@ -34,7 +34,7 @@ Without logging in or signing up no pages are publicly available.
 
 [Demo](https://rails-purse.onrender.com)
 
-[Video](https://www.loom.com/share/01651a1c5aed4efe98acc22c4670abd4?sid=6a9d231f-d403-4866-8159-9618f0c38847)
+[Video](https://www.loom.com/share/54a1c42817cb4d82a6b8bf4afbf18ec6?sid=a16ba535-9083-4ce3-8fe3-ca98d84a47db)
 
 ## 🛠 Built With <a name="built-with"></a>
 

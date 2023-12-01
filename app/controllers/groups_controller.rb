@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: %i[show]
 
   def index
-    @groups = Group.all.includes(:user)
+    @groups = current_user.groups
   end
 
   def show; end
